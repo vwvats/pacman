@@ -193,7 +193,7 @@ function moveGhost(ghost) {
       score += 100;
       ghost.classList.add(ghost.className, 'ghost')
     }
-
+    checkForGameOver();
   }, ghost.speed);
 }
 
