@@ -204,9 +204,9 @@ function checkForGameOver() {
       squares[pacmanCurrentIndex].classList.contains('ghost') && 
       !squares[pacmanCurrentIndex].classList.contains('scared-ghost')
       ) {
-  //for each ghost - we need to stop it moving
+  //stop each ghost
   ghosts.forEach(ghost => clearInterval(ghost.timerId))
-  //remove eventlistener from our control function
+  //remove eventlistener from control function
   document.removeEventListener('keyup', control)
   //tell user the game is over   
   scoreDisplay.innerHTML = 'You LOSE!'
@@ -215,10 +215,10 @@ function checkForGameOver() {
 
 // check for win
 function checkForWin() {
-  if (score === 274) {
-  //for each ghost - we need to stop it moving
+  if (score >= 274) {
+  //stop each ghost
   ghosts.forEach(ghost => clearInterval(ghost.timerId))
-  //remove eventlistener from our control function
+  //remove eventlistener from control function
   document.removeEventListener('keyup', control)
   //tell user the game is over   
   scoreDisplay.innerHTML = 'You WIN!'
